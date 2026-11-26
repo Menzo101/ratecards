@@ -1941,10 +1941,141 @@ body {
     line-height: 1.8;
 }
 
+.proof-section {
+    border-top: 1px solid #d6dbe5;
+}
+
+.proof-company {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 18px;
+    padding: 24px 28px;
+    background: var(--ink);
+    color: var(--white);
+}
+
+.proof-company-label {
+    color: var(--lime);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.proof-company h3 {
+    grid-column: 2;
+    margin: -18px 0 3px;
+    font-size: 24px;
+    letter-spacing: -.04em;
+}
+
+.proof-company p {
+    grid-column: 2;
+    margin: 0;
+    color: #d1d9ff;
+    font-size: 11px;
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.proof-card {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    border: 1px solid #dfe3eb;
+    background: var(--white);
+}
+
+.proof-card.proof-result {
+    border-color: var(--green);
+    background: var(--green);
+    color: var(--white);
+}
+
+.proof-number {
+    margin-bottom: 35px;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.proof-result .proof-number,
+.proof-result .proof-kicker {
+    color: var(--lime);
+}
+
+.proof-kicker {
+    margin: 0 0 9px;
+    color: var(--green);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.proof-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    letter-spacing: -.04em;
+}
+
+.proof-card > p:not(.proof-kicker) {
+    margin: 0;
+    color: #59647a;
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+.proof-result > p:not(.proof-kicker) {
+    color: #dce4ff;
+}
+
+.proof-link {
+    margin-top: auto;
+    padding-top: 18px;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.proof-testimonial {
+    background: #edf0fb;
+}
+
+.proof-testimonial blockquote {
+    margin: 0 0 16px;
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.proof-testimonial cite {
+    margin-top: auto;
+    color: #59647a;
+    font-size: 9px;
+    font-style: normal;
+}
+
 @media (max-width: 900px) {
     .faq-layout {
         grid-template-columns: .8fr 1.2fr;
         gap: 36px;
+    }
+
+    .proof-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proof-testimonial {
+        grid-column: 1 / -1;
     }
 }
 
@@ -1961,6 +2092,30 @@ body {
 
     .faq-heading {
         position: static;
+    }
+
+    .proof-company {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 21px;
+    }
+
+    .proof-company h3,
+    .proof-company p {
+        grid-column: 1;
+        margin: 0;
+    }
+
+    .proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proof-testimonial {
+        grid-column: auto;
+    }
+
+    .proof-card {
+        min-height: 230px;
     }
 }
 
